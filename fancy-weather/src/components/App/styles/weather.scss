@@ -1,0 +1,29 @@
+.weather {
+  padding: 0 2rem;
+
+  &__title {
+    margin: 0;
+    font-size: 6rem;
+    line-height: 1.5;
+    text-align: start;
+    text-transform: capitalize;
+  }
+
+  &__date {
+    font-size: 3rem;
+  }
+
+  &__week {
+    padding: 0;
+    list-style: none;
+  }
+
+  &__today {
+    padding: 0;
+    list-style: none;
+
+    &_temperature {
+      font-size: 20rem;
+    }
+  }
+}

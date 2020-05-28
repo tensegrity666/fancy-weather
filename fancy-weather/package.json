@@ -4,8 +4,8 @@
   "description": "RSSchool personal task",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
-    "lint": "eslint src/**/*.js && stylelint src/components/**/*.css --syntax css",
+    "test": "",
+    "lint": "eslint src/**/*.js && stylelint src/**/*.scss --syntax scss",
     "deploy": "npm run lint && npm run build && netlify deploy --prod",
     "start": "webpack-dev-server --open",
     "build": "webpack --mode production",
@@ -33,7 +33,6 @@
     "html-webpack-plugin": "^4.3.0",
     "imagemin-webpack-plugin": "^2.4.2",
     "mini-css-extract-plugin": "^0.9.0",
-    "mocha": "*",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "sass": "^1.26.5",
     "sass-loader": "8.0.2",
@@ -61,8 +60,5 @@
       "last 1 safari version",
       "last 1 ie version"
     ]
-  },
-  "directories": {
-    "test": "test"
   }
 }

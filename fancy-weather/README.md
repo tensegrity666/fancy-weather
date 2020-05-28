@@ -1,7 +1,7 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/64a8d03c-0226-4307-bca0-26c3420141c6/deploy-status)](https://app.netlify.com/sites/tensegrity666-movie-search/deploys)
-## https://tensegrity666-movie-search.netlify.app/
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9b7092bd-199a-47ff-b4fe-1f375d9e65e8/deploy-status)](https://app.netlify.com/sites/tensegrity666-fancy-weather/deploys)
+### https://tensegrity666-fancy-weather.netlify.app/
 
-Tested for compatibility in Chrome
+Tested for compatibility in Chrome.
 
 ## Install
 * npm i
@@ -14,4 +14,3 @@ Tested for compatibility in Chrome
 
 ## Build project
 * npm run build
-

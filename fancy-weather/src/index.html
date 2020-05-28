@@ -28,57 +28,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fancy Weather App</title>
 </head>
-<body>
-  <h1>fancy weather</h1>
+<body class="page">
+  <h1 class="visually-hidden">fancy weather</h1>
 
-  <header>
-    <fieldset>
-      <button>refresh background</button>
+  <header class="header">
+    <form class="controls">
+      <button class="controls__button button"><span class="visually-hidden">refresh background</span></button>
 
-      <select name="language" id="lang">
-        <option value="english">En</option>
-        <option value="russian">Ru</option>
-        <option value="belorussian">By</option>
-        <option value="finnish">Fin</option>
+      <select class="controls__select" name="language" id="lang">
+        <option value="eng">English</option>
+        <option value="rus"> Русский</option>
+        <option value="by">Беларускі</option>
+        <option value="fin">Suomalainen</option>
       </select>
 
-      <label for="celsius">*C
-        <input type="radio" name="celsius-degrees" id="celsius">
+      <label class="controls__radio" for="celsius">*C
+        <input class="visually-hidden" type="radio" name="degrees" value="celsius" id="celsius" checked>
       </label>
-      <label for="farenheit">*F
-        <input type="radio" name="farenheit-degrees" id="farenheit">
+      <label class="controls__radio controls__radio_farenheit" for="farenheit">*F
+        <input class="visually-hidden" type="radio" name="degrees" value="farenheit" id="farenheit">
       </label>
-    </fieldset>
+    </form>
 
-    <form action="" method="get">
-      <input type="text" name="serch" id="citySearcher">
-      <button type="reset">clear</button>
-      <button>speech recognition</button>
-      <button type="submit"></button>
+    <form class="search" method="get">
+      <input class="search__input" type="text" name="serch" id="citySearcher">
+      <button class="search__reset button" class="button" type="reset"><span class="visually-hidden">clear</span></button>
+      <button class="search__speech button" class="button"><span class="visually-hidden">speech recognition</span></button>
+      <button class="search__submit button" class="button" type="submit"><span class="visually-hidden">search</span></button>
     </form>
   </header>
 
-  <main>
-    <h2>choose city</h2>
-    <section>
-      <h3>map</h3>
-      <div>map</div>
-      <span>latitude:</span>
-      <span>longitude:</span>
+  <main class="container">
+    <h2 class="visually-hidden">choose city</h2>
+
+    <section class="container__block container__block_large weather">
+      <h3 class="weather__title">City, country</h3>
+      <time class="weather__date" datetime="gjytltkmybr jrnz,hm 12:00">gjytltkmybr jrnz,hm 12:00</time>
+      <ol class="weather__week">
+        <li>
+          <ul class="weather__today">
+            <li class="weather__today_temperature">10</li>
+            <li>overcast</li>
+            <li>feels like</li>
+            <li>humidity</li>
+          </ul>
+        </li>
+        <li>12</li>
+        <li>14</li>
+        <li>19</li>
+      </ol>
     </section>
 
-    <section>
-      <h3>City, country</h3>
-      <time datetime="gjytltkmybr jrnz,hm 12:00"></time>
-      <ul>
-        <li>temperature today</li>
-        <li>temperature next day</li>
-        <li>temperature next day</li>
-        <li>temperature next day</li>
+    <section class="container__block geo">
+      <h3 class="visually-hidden">map</h3>
+        <iframe class="geo__map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d252860.41225474075!2d24.708679199218782!3d60.321788920301906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1590698898128!5m2!1sru!2sru" width="600" height="400" frameborder="0" aria-hidden="false" tabindex="0"></iframe>
+      <ul class="geo__coordinates">
+        <li class="geo__coordinates_item">latitude: 27.525773</li>
+        <li class="geo__coordinates_item">longitude: 53.89079</li>
       </ul>
-      <p>
-        summary
-      </p>
     </section>
   </main>
 </body>

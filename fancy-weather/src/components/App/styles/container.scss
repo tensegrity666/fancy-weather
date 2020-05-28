@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--padding-desktop);
+  padding-top: 7rem;
+
+  &__block {
+    width: 35vw;
+    height: 70vh;
+    backdrop-filter: var(--background-filter);
+    border-radius: 3rem;
+
+    &_large {
+      width: 45vw;
+    }
+  }
+}
