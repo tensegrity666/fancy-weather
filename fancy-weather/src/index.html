@@ -3,9 +3,83 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+
+  <link rel="apple-touch-icon" sizes="180x180"
+    href="assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32"
+    href="assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16"
+    href="assets/favicon/favicon-16x16.png">
+  <link rel="shortcut icon" href="assets/favicon/favicon.ico"
+    type="image/x-icon">
+  <link rel="manifest" href="assets/favicon/site.webmanifest">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <meta name="keywords" content="RSSchool, JavaScript, education">
+  <meta name="description" content="Weather App">
+  <meta property="og:url"
+    content="" />
+  <meta property="og:title" content="Fancy Weather App" />
+  <meta property="og:description"
+    content="Here you can see the weather" />
+  <meta property="og:image"
+    content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fancy Weather App</title>
 </head>
 <body>
-  
+  <h1>fancy weather</h1>
+
+  <header>
+    <fieldset>
+      <button>refresh background</button>
+
+      <select name="language" id="lang">
+        <option value="english">En</option>
+        <option value="russian">Ru</option>
+        <option value="belorussian">By</option>
+        <option value="finnish">Fin</option>
+      </select>
+
+      <label for="celsius">*C
+        <input type="radio" name="celsius-degrees" id="celsius">
+      </label>
+      <label for="farenheit">*F
+        <input type="radio" name="farenheit-degrees" id="farenheit">
+      </label>
+    </fieldset>
+
+    <form action="" method="get">
+      <input type="text" name="serch" id="citySearcher">
+      <button type="reset">clear</button>
+      <button>speech recognition</button>
+      <button type="submit"></button>
+    </form>
+  </header>
+
+  <main>
+    <h2>choose city</h2>
+    <section>
+      <h3>map</h3>
+      <div>map</div>
+      <span>latitude:</span>
+      <span>longitude:</span>
+    </section>
+
+    <section>
+      <h3>City, country</h3>
+      <time datetime="gjytltkmybr jrnz,hm 12:00"></time>
+      <ul>
+        <li>temperature today</li>
+        <li>temperature next day</li>
+        <li>temperature next day</li>
+        <li>temperature next day</li>
+      </ul>
+      <p>
+        summary
+      </p>
+    </section>
+  </main>
 </body>
 </html>

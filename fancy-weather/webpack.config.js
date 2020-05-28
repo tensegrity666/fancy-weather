@@ -7,7 +7,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
 const devMode = process.env.NODE_ENV !== 'production';
-const REGEXP = /\.module.(sc|c)ss$/;
 
 module.exports = {
   entry: ['./src/index.js'],
@@ -21,12 +20,11 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new CopyPlugin([
-      {
-        from: 'src/assets/',
-        to: 'assets/',
-      },
-    ]),
+    new CopyPlugin({
+      patterns: [
+        { from: 'src/assets/', to: 'assets/' },
+      ],
+    }),
     new HtmlWebpackPlugin({
       title: 'Caching',
       template: './src/index.html',
@@ -55,42 +53,23 @@ module.exports = {
         },
       },
       {
-        test: REGEXP,
+        test: /\.(sc|c)ss$/i,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
+              esModule: true,
+            },
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                auto: true,
+                localIdentName: devMode ? '[path][name]__[local]' : '[hash:base64:5]',
+              },
+              esModule: true,
               importLoaders: 1,
-              modules: true,
-              localIdentName='[name]_[local]_[hash:base64:5]',
-              esModule: true,
-            },
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              esModule: true,
-            },
-          },
-          {
-            loader: 'sass-loader',
-          },
-        ],
-      },
-      {
-        test: /\.(sc|c)ss$/,
-        exclude: REGEXP,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              esModule: true,
-            },
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              esModule: true,
             },
           },
           {
