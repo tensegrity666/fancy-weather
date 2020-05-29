@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <script src="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css" rel="stylesheet" />
   <link rel="apple-touch-icon" sizes="180x180"
     href="assets/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32"
@@ -89,12 +91,13 @@
 
     <section class="container__block geo">
       <h3 class="visually-hidden">map</h3>
-        <iframe class="geo__map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d252860.41225474075!2d24.708679199218782!3d60.321788920301906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1590698898128!5m2!1sru!2sru" width="600" height="400" frameborder="0" aria-hidden="false" tabindex="0"></iframe>
+        <div class="geo__map" id="map"></div>
       <ul class="geo__coordinates">
         <li class="geo__coordinates_item">latitude: 27.525773</li>
         <li class="geo__coordinates_item">longitude: 53.89079</li>
       </ul>
     </section>
   </main>
+
 </body>
 </html>
