@@ -6,13 +6,35 @@
   padding-top: 7rem;
 
   &__block {
-    width: 35vw;
-    height: 70vh;
+    width: 45%;
+    min-height: 60rem;
     backdrop-filter: var(--background-filter);
     border-radius: 3rem;
+  }
+}
 
-    &_large {
-      width: 45vw;
+@media (max-width: 1280px) {
+  .container {
+    flex-direction: column;
+
+    &__block {
+      width: 100%;
+      backdrop-filter: var(--background-filter);
+      border-radius: 3rem;
+
+      &_large {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 414px) {
+  .container {
+    padding: 1rem;
+
+    &__block {
+      min-height: 40rem;
     }
   }
 }

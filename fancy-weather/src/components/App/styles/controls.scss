@@ -1,6 +1,7 @@
 .controls {
   display: flex;
   align-items: center;
+  padding: 0 2rem;
 
   &__select {
     width: 30rem;
@@ -48,5 +49,34 @@
     background-color: var(--color-background-form);
     border: none;
     border-radius: var(--border-radius-input) 0 0 var(--border-radius-input);
+  }
+}
+
+@media (max-width: 768px) {
+  .controls {
+    width: 100%;
+
+    &__select {
+      width: 80%;
+    }
+
+    &__radio {
+      width: 5rem;
+      font-size: 2.2rem;
+      line-height: 1.7;
+    }
+  }
+}
+
+@media (max-width: 414px) {
+  .controls__select {
+    width: 70%;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 414px) {
+  .controls__select {
+    font-size: 1.4rem;
   }
 }

@@ -2,6 +2,16 @@
 @import './components/App/styles/index.scss';
 //
 
+@font-face {
+  font-family: "Comfortaa";
+  src: url("./assets/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "Russian Display";
+  src: url("/assets/fonts/Ruslan_Display/RuslanDisplay-Regular.ttf") format("opentype");
+}
+
 :root {
   /* colors */
   --color-white: #f5f2f2;
@@ -20,7 +30,7 @@
   --color-info: var(--color-gray);
   --color-success: var(--color-darkgreen);
   --color-background-form: var(--black-transparent);
-  --background-filter: blur(5px) grayscale(0.2);
+  --background-filter: blur(6px) grayscale(0.3);
 
   /* position */
   --z-index-top: 9999;
@@ -28,13 +38,14 @@
   --border-radius-input: 1rem;
 
   /* fonts */
-  --font-header-logo: 'Notable', sans-serif;
-  --font-author: 'Poiret One', cursive;
+  --font-primary: "Russian Display", sans-serif;
+  --font-secondary: "Comfortaa", cursive;
 
   /* animations */
   --default-transition: all 0.3s linear;
 
-  font-family: 'Kanit', sans-serif;
+  overflow-x: hidden;
+  font-family: var(--font-secondary);
   font-size: 62.5%;
   line-height: 2;
 }
