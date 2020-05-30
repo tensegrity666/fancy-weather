@@ -2,12 +2,16 @@
 
 import './index.scss';
 
+// import Presenter from './components/Presenter';
+import GeoView from './components/Geo';
+
+
 import IPinfo from './utils/IPinfo';
 import renderMap from './utils/MapBox';
 import getUnsplashImage from './utils/Unsplash';
 import getWeatherData,
 {
-  requestLinkRuCels, requestLinkRuFar, requestLinkFiCels, requestLinkFiFar,
+  requestLinkRuCels,
 } from './utils/OpenWeather';
 
 import TOKENS from '../tokens';
@@ -24,6 +28,11 @@ async function getUserData() {
 const coordinates = [30.3141, 59.9386];
 
 getUserData();
+
+// !
+const geo = new GeoView(coordinates);
+geo.addMap();
+
 renderMap(TOKENS.mapBox, coordinates);
 
 getUnsplashImage('summer', 1)
@@ -44,3 +53,5 @@ getWeatherData(requestLinkRuCels, 'Saint Petersburg')
 
     console.log(data.city.coord, data.city.name, weather.main.temp);
   });
+
+

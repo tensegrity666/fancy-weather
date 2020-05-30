@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 
-let { marker } = window;
-const { mapboxgl } = window;
+import mapboxgl from 'mapbox-gl';
 
 function renderMap(token, coordinates) {
   mapboxgl.accessToken = token;
@@ -13,7 +12,7 @@ function renderMap(token, coordinates) {
     zoom: 10,
   });
 
-  marker = new mapboxgl.Marker()
+  const marker = new mapboxgl.Marker()
     .setLngLat(coordinates)
     .addTo(map);
 }
