@@ -8,5 +8,9 @@ const getRandomInt = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
+const roundTemperature = (temp) => Number(Math.round(temp));
 
-export { createRequestLink, getRandomInt };
+
+export {
+  createRequestLink, getRandomInt, roundTemperature,
+};

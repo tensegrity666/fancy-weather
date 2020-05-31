@@ -3,18 +3,25 @@
 
 import './styles/geo.scss';
 
+
 class GeoView {
   constructor(coordinates) {
     this.container = document.querySelector('.container');
     this.latitude = coordinates[0];
     this.longitude = coordinates[1];
+
+    this.addMap();
   }
 
   addMap() {
+    if (this.map) {
+      return this.map;
+    }
     this.map = document.createElement('section');
     this.map.classList.add('container__block', 'geo');
     this.map.innerHTML = this.render();
-    this.container.append(this.map);
+
+    return this.container.append(this.map);
   }
 
   render() {

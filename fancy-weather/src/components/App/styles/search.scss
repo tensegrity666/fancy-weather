@@ -6,7 +6,7 @@
 
   &__input {
     width: 45rem;
-    padding: 1rem 1.5rem;
+    padding: 0.95rem 1.5rem;
     margin: 0;
     font-size: 2.6rem;
     color: var(--color-default);
@@ -28,7 +28,7 @@
   &__speech,
   &__reset {
     position: absolute;
-    background-color: red;
+    background-color: transparent;
   }
 
   &__speech {

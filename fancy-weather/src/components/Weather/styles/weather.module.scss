@@ -5,7 +5,7 @@
   align-items: center;
   padding: 0 2rem;
 
-  &__title {
+  &Title {
     grid-row: 1;
     grid-column: 1 / span 3;
     padding-top: 1rem;
@@ -18,14 +18,14 @@
     text-transform: capitalize;
   }
 
-  &__date {
+  &Date {
     grid-row: 2;
     grid-column: 1 / span 3;
     font-size: 3rem;
     text-shadow: 0 2px 2px var(--color-background-form);
   }
 
-  &__week {
+  &Week {
     display: grid;
     grid-template-rows: 30rem 15rem;
     grid-template-columns: repeat(3, 1fr);
@@ -36,21 +36,21 @@
     text-shadow: 0 2px 2px var(--color-background-form);
     list-style: none;
 
-    &_second {
+    &Second {
       position: relative;
       grid-row: 2;
       grid-column: 1;
       font-family: var(--font-primary);
     }
 
-    &_third {
+    &Third {
       position: relative;
       grid-row: 2;
       grid-column: 2;
       font-family: var(--font-primary);
     }
 
-    &_fourd {
+    &Fourd {
       position: relative;
       grid-row: 2;
       grid-column: 3;
@@ -58,7 +58,7 @@
     }
   }
 
-  &__today {
+  &Today {
     grid-row: 1;
     grid-column: 3;
     padding: 0;
@@ -71,7 +71,7 @@
       list-style: none;
     }
 
-    &_temperature {
+    &Temperature {
       position: relative;
       grid-row: 1;
       grid-column: 1 / span 2;
@@ -85,36 +85,36 @@
 }
 
 @media (max-width: 1600px) {
-  .weather__today_temperature {
+  .weatherTodayTemperature {
     font-size: 28rem;
   }
 }
 
 @media (max-width: 1400px) {
-  .weather__today_temperature {
+  .weatherTodayTemperature {
     font-size: 20rem;
   }
 }
 
 @media (max-width: 1280px) {
-  .weather__today {
+  .weatherToday {
     font-size: 2.6rem;
 
-    &_temperature {
+    &Temperature {
       padding-left: 9rem;
     }
   }
 }
 
 @media (max-width: 768px) {
-  .weather__title {
+  .weatherTitle {
     font-size: 5rem;
   }
 
-  .weather__today {
+  .weatherToday {
     font-size: 2.4rem;
 
-    &_temperature {
+    &Temperature {
       padding-left: 4rem;
     }
   }
@@ -124,24 +124,24 @@
   .weather {
     grid-template-rows: 10rem 5rem;
 
-    &__title {
+    &Title {
       font-size: 3.5rem;
     }
 
-    &__week {
+    &Week {
       grid-template-rows: 14rem 5rem;
       font-size: 4rem;
     }
 
-    &__date {
+    &Date {
       font-size: 2rem;
     }
 
-    &__today {
+    &Today {
       font-size: 1.8rem;
       line-height: 1.2;
 
-      &_temperature {
+      &Temperature {
         padding: 0;
         font-size: 9rem;
         line-height: 1.4;
@@ -151,13 +151,13 @@
 }
 
 @media (max-width: 375px) {
-  .weather__title {
+  .weatherTitle {
     font-size: 3rem;
   }
 }
 
 @media (max-width: 320px) {
-  .weather__week {
+  .weatherWeek {
     font-size: 3rem;
     line-height: 1;
   }

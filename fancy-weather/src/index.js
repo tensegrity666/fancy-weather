@@ -1,9 +1,13 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
 
 import './index.scss';
 
 // import Presenter from './components/Presenter';
 import GeoView from './components/Geo';
+import WeatherView from './components/Weather';
+import WeatherModel from './components/Weather/WeatherModel';
+import AppModel from './components/App/AppModel';
 
 
 import IPinfo from './utils/IPinfo';
@@ -18,28 +22,26 @@ import TOKENS from '../tokens';
 import { IPinfoLink } from './constants';
 
 async function getUserData() {
-  const {
-    city, country, timezone, loc,
-  } = await IPinfo(IPinfoLink, TOKENS.IPinfo);
+  const { loc } = await IPinfo(IPinfoLink, TOKENS.IPinfo);
 
-  console.log(city, country, timezone, loc);
+  return loc;
 }
 
-const coordinates = [30.3141, 59.9386];
 
-getUserData();
+getUserData()
+  .then((data) => {
+    const coordinates = data.split(',');
 
-// !
-const geo = new GeoView(coordinates);
-geo.addMap();
+    const geo = new GeoView(coordinates);
 
-renderMap(TOKENS.mapBox, coordinates);
+    renderMap(TOKENS.mapBox, coordinates);
+  });
 
-getUnsplashImage('summer', 1)
+
+getUnsplashImage('Rain')
   .then((data) => {
     const images = data.results[0];
 
-    console.log(images.urls.regular);
     document.body.style.backgroundImage = `url(${images.urls.regular})`;
   })
   .catch((err) => {
@@ -51,7 +53,11 @@ getWeatherData(requestLinkRuCels, 'Saint Petersburg')
   .then((data) => {
     const weather = data.list[0];
 
-    console.log(data.city.coord, data.city.name, weather.main.temp);
+    const model = new WeatherModel(data.city, weather);
+
+    const weatherMod = new WeatherView(model);
+    console.log(weatherMod);
   });
 
-
+const app = new AppModel();
+console.log(app.currentLanguage);

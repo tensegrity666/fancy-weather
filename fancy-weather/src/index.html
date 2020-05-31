@@ -30,11 +30,12 @@
   <title>Fancy Weather App</title>
 </head>
 <body class="page">
-  <h1 class="visually-hidden">fancy weather</h1>
+  <h1 class="visually-hidden">fancy weather app</h1>
 
   <header class="header">
     <form class="controls">
-      <button class="controls__button button"><span class="visually-hidden">refresh background</span></button>
+      <button class="controls__button button" id="refresh"><span class="visually-hidden">refresh background</span>	
+        &#8634;</button>
 
       <select class="controls__select" name="language" id="lang">
         <option value="eng">English</option>
@@ -43,50 +44,24 @@
         <option value="fin">Suomalainen</option>
       </select>
 
-      <label class="controls__radio" for="celsius">*C
+      <label class="controls__radio" for="celsius">&#8451;
         <input class="visually-hidden" type="radio" name="degrees" value="celsius" id="celsius" checked>
       </label>
-      <label class="controls__radio controls__radio_farenheit" for="farenheit">*F
+      <label class="controls__radio controls__radio_farenheit" for="farenheit">&#8457;
         <input class="visually-hidden" type="radio" name="degrees" value="farenheit" id="farenheit">
       </label>
     </form>
 
     <form class="search" method="get">
       <input class="search__input" type="text" name="serch" id="citySearcher">
-      <button class="search__reset button" class="button" type="reset"><span class="visually-hidden">clear</span></button>
-      <button class="search__speech button" class="button"><span class="visually-hidden">speech recognition</span></button>
-      <button class="search__submit button" class="button" type="submit"><span class="visually-hidden">search</span></button>
+      <button class="search__reset button" class="button" type="reset"><span class="visually-hidden">clear</span>&#10060;</button>
+      <button class="search__speech button" class="button"><span class="visually-hidden">speech recognition</span>&#127897;</button>
+      <button class="search__submit button" class="button" type="submit"><span class="visually-hidden">search</span>&#128269;</button>
     </form>
   </header>
 
   <main class="container">
-    <h2 class="visually-hidden">choose city</h2>
-
-    <section class="container__block container__block_large weather">
-      <h3 class="weather__title">Amsterdam, Netherlands</h3>
-      <time class="weather__date" datetime="gjytltkmybr jrnz,hm 12:00">gjytltkmybr jrnz,hm 12:00</time>
-      <ol class="weather__week">
-        <li class="weather__today_temperature">10
-          <div class="icon icon_today" data-icon-today></div>
-        </li>
-        <li class="weather__today">
-          <ul>
-            <li>overcast</li>
-            <li>feels like 21</li>
-            <li>humidity</li>
-          </ul>
-        </li>
-        <li class="weather__week_second">12
-          <div class="icon icon_small icon_second" data-icon-second></div>
-        </li>
-        <li class="weather__week_third">14
-          <div class="icon icon_small icon_third" data-icon-third></div>
-        </li>
-        <li class="weather__week_fourd">19
-          <div class="icon icon_small icon_fourd" data-icon-fourd></div>
-        </li>
-      </ol>
-    </section>
+    <h2 class="visually-hidden">weather in your city</h2>
   </main>
 </body>
 </html>

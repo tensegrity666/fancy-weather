@@ -1,11 +1,10 @@
 .icon {
   width: 20rem;
   height: 20rem;
-  background-image: url("/assets/weatherIcons/clear-day.svg");
   background-repeat: no-repeat;
   background-position: center;
 
-  &_small {
+  &Small {
     position: absolute;
     top: 0.5rem;
     left: 7rem;
@@ -13,7 +12,7 @@
     height: 10rem;
   }
 
-  &_today {
+  &Today {
     position: absolute;
     top: 2rem;
     left: 33rem;
@@ -21,7 +20,7 @@
 }
 
 @media (max-width: 1600px) {
-  .icon_today {
+  .iconToday {
     top: 4rem;
     width: 15rem;
     height: 15rem;
@@ -29,33 +28,33 @@
 }
 
 @media (max-width: 1400px) {
-  .icon_today {
+  .iconToday {
     top: 3rem;
     left: 23rem;
     width: 12rem;
     height: 12rem;
   }
 
-  .icon_small {
+  .iconSmall {
     left: 6rem;
   }
 }
 
 @media (max-width: 1280px) {
-  .icon_today {
+  .iconToday {
     top: 1rem;
     left: 33rem;
     width: 15rem;
     height: 15rem;
   }
 
-  .icon_small {
+  .iconSmall {
     left: 6rem;
   }
 }
 
 @media (max-width: 768px) {
-  .icon_today {
+  .iconToday {
     top: 1rem;
     left: 26rem;
     width: 14rem;
@@ -64,14 +63,14 @@
 }
 
 @media (max-width: 414px) {
-  .icon_today {
+  .iconToday {
     top: 1rem;
     left: 10rem;
     width: 9rem;
     height: 9rem;
   }
 
-  .icon_small {
+  .iconSmall {
     top: 1rem;
     left: 5rem;
     width: 5rem;
@@ -80,14 +79,14 @@
 }
 
 @media (max-width: 320px) {
-  .icon_today {
+  .iconToday {
     top: 2rem;
     left: 10rem;
     width: 7rem;
     height: 7rem;
   }
 
-  .icon_small {
+  .iconSmall {
     top: -1rem;
     left: 3rem;
     width: 5rem;

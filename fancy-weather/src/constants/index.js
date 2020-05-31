@@ -18,4 +18,7 @@ const openWeatherParams = {
   queryPostfix: 'q=',
 };
 
-export { IPinfoLink, unsplashParams, openWeatherParams };
+
+export {
+  IPinfoLink, unsplashParams, openWeatherParams,
+};
