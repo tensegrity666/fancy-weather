@@ -4,18 +4,23 @@
   justify-content: space-between;
   padding: var(--padding-desktop);
   padding-top: 7rem;
+}
 
-  &__block {
-    width: 45%;
-    min-height: 60rem;
-    backdrop-filter: var(--background-filter);
-    border-radius: 3rem;
+#leftBlock,
+#rightBlock {
+  width: 45%;
+  min-height: 60rem;
+  backdrop-filter: var(--background-filter);
+  border-radius: 3rem;
+  // &_left {
+  //   order: 0;
+  //   margin-bottom: 2rem;
+  // }
 
-    &_large {
-      order: 0;
-      margin-bottom: 2rem;
-    }
-  }
+  // &_rightn {
+  //   order: 0;
+  //   margin-bottom: 2rem;
+  // }
 }
 
 @media (max-width: 1280px) {

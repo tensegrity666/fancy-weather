@@ -1,6 +1,6 @@
 /* eslint-disable prefer-destructuring */
 
-import { roundTemperature } from '../../helpers';
+import { roundValue } from '../../helpers';
 
 
 class WeatherModel {
@@ -26,8 +26,8 @@ class WeatherModel {
   }
 
   round() {
-    this.temperature = roundTemperature(this.temperature);
-    this.feels = roundTemperature(this.feels);
+    this.temperature = roundValue(this.temperature);
+    this.feels = roundValue(this.feels);
   }
 }
 

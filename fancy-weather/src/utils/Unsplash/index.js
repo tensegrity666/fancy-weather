@@ -1,5 +1,5 @@
-import { createRequestLink, getRandomInt } from '../../helpers';
-import { unsplashParams } from '../../constants';
+import { getRandomInt } from '../../helpers';
+import { unsplashParams, createRequestLink } from '../../constants';
 import TOKENS from '../../../tokens';
 
 const {

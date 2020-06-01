@@ -18,7 +18,14 @@ const openWeatherParams = {
   queryPostfix: 'q=',
 };
 
+const createRequestLink = (link, token, param1 = null, param2 = null, param3 = null, query) => `${link}${token}&${param1}&${param2}&${param3}&${query}`;
+
+const elementID = {
+  left: 'leftBlock',
+  right: 'rightBlock',
+};
+
 
 export {
-  IPinfoLink, unsplashParams, openWeatherParams,
+  IPinfoLink, unsplashParams, openWeatherParams, createRequestLink, elementID,
 };

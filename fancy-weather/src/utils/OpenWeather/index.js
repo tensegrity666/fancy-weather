@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 
-import { createRequestLink } from '../../helpers';
-import { openWeatherParams } from '../../constants';
+
+import { openWeatherParams, createRequestLink } from '../../constants';
 import TOKENS from '../../../tokens';
 
 const {

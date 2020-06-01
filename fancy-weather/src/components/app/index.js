@@ -2,7 +2,10 @@ import './styles/index.scss';
 
 class AppView {
   constructor(model) {
+    this.currentLanguage = this.languageSelect.value;
     this.lang = model.currentLanguage;
+
+    this.languageSelect = document.querySelector('#lang');
 
     this.refreshBackgroundBtn = document.querySelector('#refresh');
 
