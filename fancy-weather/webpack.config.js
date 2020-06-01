@@ -66,7 +66,7 @@ module.exports = {
             options: {
               modules: {
                 auto: true,
-                localIdentName: devMode ? '[path][name]__[local]' : '[hash:base64:5]',
+                localIdentName: '[local]_[hash:base64:5]',
               },
               esModule: true,
               importLoaders: 1,

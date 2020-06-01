@@ -5,13 +5,13 @@ import { openWeatherParams, createRequestLink } from '../../constants';
 import TOKENS from '../../../tokens';
 
 const {
-  link, langFi, langRu, limits, unitsCels, unitsFar, queryPostfix,
+  link, langFi, langRu, days, unitsCels, unitsFar, queryPostfix,
 } = openWeatherParams;
 
-const requestLinkRuCels = createRequestLink(link, TOKENS.openWeather, langRu, limits, unitsCels, queryPostfix);
-const requestLinkRuFar = createRequestLink(link, TOKENS.openWeather, langRu, limits, unitsFar, queryPostfix);
-const requestLinkFiCels = createRequestLink(link, TOKENS.openWeather, langFi, limits, unitsCels, queryPostfix);
-const requestLinkFiFar = createRequestLink(link, TOKENS.openWeather, langFi, limits, unitsFar, queryPostfix);
+const requestLinkRuCels = createRequestLink(link, TOKENS.openWeather, langRu, days, unitsCels, queryPostfix);
+const requestLinkRuFar = createRequestLink(link, TOKENS.openWeather, langRu, days, unitsFar, queryPostfix);
+const requestLinkFiCels = createRequestLink(link, TOKENS.openWeather, langFi, days, unitsCels, queryPostfix);
+const requestLinkFiFar = createRequestLink(link, TOKENS.openWeather, langFi, days, unitsFar, queryPostfix);
 
 const controller = new AbortController();
 const { signal } = controller;

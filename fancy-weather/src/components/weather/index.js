@@ -7,49 +7,66 @@ import WeatherModel from './weather.model';
 
 
 class WeatherView {
-  constructor(city, overcast) {
-    this.model = new WeatherModel(city, overcast);
+  constructor(city, forecast) {
+    this.model = new WeatherModel(city, forecast);
 
-    // this.city = model.city;
-    // this.country = model.country;
-    // this.temperature = model.temperature;
-    // this.icon = model.icon;
-    // this.date = model.UTCstring;
-    // this.feels = model.feels;
-    // this.humidity = model.humidity;
-    // this.pressure = model.pressure;
-    // this.description = model.description;
-    // this.render();
+    this.timer = setInterval(this.clock, 1000);
+  }
+
+  clock() {
+    this.date = new Date();
+
+    this.hh = this.date.getHours();
+    if (this.hh < 10) {
+      this.hh = `0${this.hh}`;
+    }
+
+    this.min = this.date.getMinutes();
+    if (this.min < 10) {
+      this.min = `0${this.min}`;
+    }
+
+    this.sec = this.date.getSeconds();
+    if (this.sec < 10) {
+      this.sec = `0${this.sec}`;
+    }
+
+    document.querySelector('#clock').innerText = `${this.hh}:${this.min}:${this.sec}`;
   }
 
   render() {
     return `
       <section class=${styles.weather}>
         <h3 class=${styles.weatherTitle}>${this.model.city}, ${this.model.country}</h3>
-        <time class=${styles.weatherDate} datetime=${this.date}>${this.model.date}</time>
+        <time class=${styles.weatherDate} datetime=${this.model.beautyDate}>${this.model.beautyDate}</time><span id='clock'></span>
         <ol class=${styles.weatherWeek}>
-          <li class=${styles.weatherTodayTemperature}>${this.temperature}&#176;
-            <div class='${icons.icon} ${icons.iconToday}' style='background-image: url(./assets/weatherIcons/${this.model.icon}.svg)'></div>
+          <li class=${styles.weatherTodayTemperature}>${this.model.temperature || '--'}&#176;
+            <div class='${icons.icon} ${icons.iconToday}' style='background-image: url(./assets/weatherIcons/${this.model.iconCodeToday}.svg)'></div>
           </li>
           <li class=${styles.weatherToday}>
             <ul>
-              <li>${this.model.description}</li>
-              <li>pressure: ${this.model.pressure}</li>
-              <li>feels like: ${this.model.feels}</li>
-              <li>humidity: ${this.model.humidity}</li>
+              <li>${this.model.descriptionToday}</li>
+              <li>feels like: ${this.model.feels || '--'}</li>
+              <li>wind: ${this.model.wind || '--'}m/s</li>
+              <li>pressure: ${this.model.pressure || '--'}hPa</li>
+              <li>humidity: ${this.model.humidity || '--'}%</li>
             </ul>
           </li>
-          <li class=${styles.weatherWeekSecond}>12 &#176;
-            <div class='${icons.icon} ${icons.iconSmall}' style='background-image: url(./assets/weatherIcons/${this.model.icon}.svg)'></div>
+          <li class=${styles.weatherWeekSecond}>${this.model.temperatureSecond || '--'}&#176;
+            <div class='${icons.icon} ${icons.iconSmall}' style='background-image: url(./assets/weatherIcons/${this.model.iconCodeSecondDay}.svg)'></div>
           </li>
-          <li class=${styles.weatherWeekThird}>14 &#176;
-            <div class='${icons.icon} ${icons.iconSmall}' style='background-image: url(./assets/weatherIcons/${this.model.icon}.svg)'></div>
+          <li class=${styles.weatherWeekThird}>${this.model.temperatureThird || '--'}&#176;
+            <div class='${icons.icon} ${icons.iconSmall}' style='background-image: url(./assets/weatherIcons/${this.model.iconCodeThirdDay}.svg)'></div>
           </li>
-          <li class=${styles.weatherWeekFourd}>19 &#176;
-            <div class='${icons.icon} ${icons.iconSmall}' style='background-image: url(./assets/weatherIcons/${this.model.icon}.svg)'></div>
+          <li class=${styles.weatherWeekFourd}>${this.model.temperatureFourd || '--'}&#176;
+            <div class='${icons.icon} ${icons.iconSmall}' style='background-image: url(./assets/weatherIcons/${this.model.iconCodeFourdDay}.svg)'></div>
           </li>
         </ol>
       </section>`;
+  }
+
+  deleteTimer() {
+    clearInterval(this.timer);
   }
 }
 
