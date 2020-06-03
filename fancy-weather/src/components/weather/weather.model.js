@@ -2,7 +2,6 @@
 /* eslint-disable prefer-destructuring */
 
 import { roundValue } from '../../helpers';
-import { DAYS } from '../../constants';
 
 
 class WeatherModel {
@@ -13,9 +12,9 @@ class WeatherModel {
 
     // ! UGLY
     this.today = forecast[0];
-    this.secondDay = forecast[1];
-    this.thirdDay = forecast[2];
-    this.fourdDay = forecast[3];
+    this.secondDay = forecast[8];
+    this.thirdDay = forecast[16];
+    this.fourdDay = forecast[24];
 
     this.temperature = this.today.main.temp;
     this.temperatureSecond = this.secondDay.main.temp;
@@ -42,8 +41,6 @@ class WeatherModel {
     this.iconCodeFourdDay = this.dataFourdDay.icon;
     // !
 
-    this.beautyDate = this.formatDate(new Date());
-
     this.round();
   }
 
@@ -54,29 +51,6 @@ class WeatherModel {
     this.temperatureFourd = roundValue(this.temperatureFourd);
     this.feels = roundValue(this.feels);
     this.wind = roundValue(this.wind);
-  }
-
-
-  formatDate(date) {
-    this.day = date.getDay();
-    this.dayText = DAYS[this.day];
-
-    this.dd = date.getDate();
-    if (this.dd < 10) {
-      this.dd = `0${this.dd}`;
-    }
-
-    this.mm = date.getMonth() + 1;
-    if (this.mm < 10) {
-      this.mm = `0${this.mm}`;
-    }
-
-    this.yy = date.getFullYear() % 100;
-    if (this.yy < 10) {
-      this.yy = `0${this.yy}`;
-    }
-
-    return `${this.dayText} ${this.dd}.${this.mm}.${this.yy}`;
   }
 }
 

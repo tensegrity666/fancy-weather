@@ -1,11 +1,11 @@
+/* eslint-disable class-methods-use-this */
+
 import './styles/index.scss';
 
 class AppView {
-  constructor(model) {
-    this.currentLanguage = this.languageSelect.value;
-    this.lang = model.currentLanguage;
-
+  constructor() {
     this.languageSelect = document.querySelector('#lang');
+    this.currentLanguage = this.languageSelect.value;
 
     this.refreshBackgroundBtn = document.querySelector('#refresh');
 

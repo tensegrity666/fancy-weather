@@ -6,7 +6,7 @@ import './index.scss';
 import Presenter from './presenter';
 
 import IPinfo from './utils/IPinfo';
-import renderMap from './utils/MapBox';
+import { renderMap } from './utils/MapBox';
 
 import TOKENS from '../tokens';
 import { IPinfoLink } from './constants';
@@ -24,7 +24,6 @@ getUserLocation()
     const userCity = data.city;
     const coordinates = data.loc.split(',');
 
-    // * const geo = new GeoView(coordinates);
     const presenter = new Presenter(coordinates, userCity);
 
     renderMap(TOKENS.mapBox, coordinates);

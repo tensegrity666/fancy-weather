@@ -18,4 +18,20 @@ function renderMap(token, coordinates) {
     .addTo(map);
 }
 
-export default renderMap;
+
+function searchCity(token, city) {
+  mapboxgl.accessToken = token;
+
+  const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: city,
+    zoom: 10,
+  });
+
+  const marker = new mapboxgl.Marker()
+    .setLngLat(city)
+    .addTo(map);
+}
+
+export { renderMap, searchCity };

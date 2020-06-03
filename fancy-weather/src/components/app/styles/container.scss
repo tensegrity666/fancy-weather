@@ -12,39 +12,29 @@
   min-height: 60rem;
   backdrop-filter: var(--background-filter);
   border-radius: 3rem;
-  // &_left {
-  //   order: 0;
-  //   margin-bottom: 2rem;
-  // }
-
-  // &_rightn {
-  //   order: 0;
-  //   margin-bottom: 2rem;
-  // }
 }
 
 @media (max-width: 1280px) {
+  #leftBlock,
+  #rightBlock {
+    width: 100%;
+    margin-bottom: 2rem;
+    backdrop-filter: var(--background-filter);
+    border-radius: 3rem;
+  }
+
   .container {
     flex-direction: column;
-
-    &__block {
-      width: 100%;
-      backdrop-filter: var(--background-filter);
-      border-radius: 3rem;
-
-      &_large {
-        margin-bottom: 2rem;
-      }
-    }
   }
 }
 
 @media (max-width: 414px) {
+  #leftBlock,
+  #rightBlock {
+    min-height: 40rem;
+  }
+
   .container {
     padding: 1rem;
-
-    &__block {
-      min-height: 40rem;
-    }
   }
 }

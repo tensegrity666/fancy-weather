@@ -40,6 +40,10 @@ class Presenter {
             console.log(err);
             setBackgroundImage('/assets/images/default.jpg');
           });
+      })
+      .catch((err) => {
+        console.log(err);
+        setBackgroundImage('/assets/images/default.jpg');
       });
   }
 }

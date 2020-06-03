@@ -1,6 +1,8 @@
 const IPinfoLink = 'https://ipinfo.io/json?token=';
 
-const DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const DAYS_EN = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+const DAYS = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
 
 const unsplashParams = {
   link: 'https://api.unsplash.com/search/photos?client_id=',
@@ -13,8 +15,9 @@ const unsplashParams = {
 const openWeatherParams = {
   link: 'https://api.openweathermap.org/data/2.5/forecast?appid=',
   langFi: 'lang=fi',
+  langEn: 'lang=en',
   langRu: 'lang=ru',
-  days: 'cnt=4',
+  days: 'cnt=32',
   unitsCels: 'units=metric',
   unitsFar: 'units=imperial',
   queryPostfix: 'q=',
@@ -28,5 +31,5 @@ const elementID = {
 };
 
 export {
-  IPinfoLink, unsplashParams, openWeatherParams, createRequestLink, elementID, DAYS,
+  IPinfoLink, unsplashParams, openWeatherParams, createRequestLink, elementID, DAYS, DAYS_EN,
 };

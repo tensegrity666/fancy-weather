@@ -3,7 +3,7 @@
   grid-template-rows: 20rem 5rem;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
-  padding: 0 2rem;
+  padding: 1rem;
 
   &Title {
     grid-row: 1;
@@ -78,7 +78,7 @@
       align-self: center;
       justify-self: start;
       font-family: var(--font-primary);
-      font-size: 30rem;
+      font-size: 24rem;
       line-height: 1;
     }
   }
@@ -86,7 +86,7 @@
 
 @media (max-width: 1600px) {
   .weatherTodayTemperature {
-    font-size: 28rem;
+    font-size: 22rem;
   }
 }
 
