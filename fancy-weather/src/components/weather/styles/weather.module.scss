@@ -84,6 +84,18 @@
   }
 }
 
+.active {
+  filter: opacity(0.8);
+}
+
+.nextDay {
+  position: absolute;
+  top: 8rem;
+  right: 0;
+  font-family: var(--font-secondary);
+  font-size: 2rem;
+}
+
 @media (max-width: 1600px) {
   .weatherTodayTemperature {
     font-size: 22rem;

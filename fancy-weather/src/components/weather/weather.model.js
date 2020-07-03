@@ -10,7 +10,6 @@ class WeatherModel {
     this.country = city.country;
     this.population = city.population;
 
-    // ! UGLY
     this.today = forecast[0];
     this.secondDay = forecast[8];
     this.thirdDay = forecast[16];
@@ -39,7 +38,6 @@ class WeatherModel {
     this.iconCodeSecondDay = this.dataSecondDay.icon;
     this.iconCodeThirdDay = this.dataThirdDay.icon;
     this.iconCodeFourdDay = this.dataFourdDay.icon;
-    // !
 
     this.round();
   }
