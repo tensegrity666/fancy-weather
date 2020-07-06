@@ -16,8 +16,10 @@ class GeoView {
         <h3 class='visually-hidden'>map</h3>
         <div class='map' id='map'></div>
         <ul class='coordinates'>
+
           <li class='coordinates_item'>Широта: ${this.latitude}</li>
           <li class='coordinates_item'>Долгота: ${this.longitude}</li>
+
         </ul>
       </section>`;
   }

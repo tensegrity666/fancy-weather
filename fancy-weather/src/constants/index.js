@@ -1,7 +1,6 @@
 const IPinfoLink = 'https://ipinfo.io/json?token=';
 
 const DAYS_EN = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-
 const DAYS = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
 
 const unsplashParams = {

@@ -8,7 +8,8 @@ const getRandomInt = (min, max) => {
 
 const roundValue = (value) => Number(Math.round(value));
 
+const convertToFahrenheit = (value) => Number(value * 1.8 + 32);
 
 export {
-  getRandomInt, roundValue,
+  getRandomInt, roundValue, convertToFahrenheit,
 };

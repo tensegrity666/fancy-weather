@@ -25,41 +25,60 @@ class WeatherView {
       this.dd = `0${this.dd}`;
     }
 
-    this.mm = this.date.getMonth() + 1;
-    if (this.mm < 10) {
-      this.mm = `0${this.mm}`;
+    let mm = this.date.getMonth() + 1;
+    if (mm < 10) {
+      mm = `0${mm}`;
     }
 
-    this.yy = this.date.getFullYear() % 100;
-    if (this.yy < 10) {
-      this.yy = `0${this.yy}`;
+    let yy = this.date.getFullYear() % 100;
+    if (yy < 10) {
+      yy = `0${yy}`;
     }
 
-    this.hh = this.date.getHours();
-    if (this.hh < 10) {
-      this.hh = `0${this.hh}`;
+    let hh = this.date.getHours();
+    if (hh < 10) {
+      hh = `0${hh}`;
     }
 
-    this.min = this.date.getMinutes();
-    if (this.min < 10) {
-      this.min = `0${this.min}`;
+    let min = this.date.getMinutes();
+    if (min < 10) {
+      min = `0${min}`;
     }
 
-    this.sec = this.date.getSeconds();
-    if (this.sec < 10) {
-      this.sec = `0${this.sec}`;
+    let sec = this.date.getSeconds();
+    if (sec < 10) {
+      sec = `0${sec}`;
     }
 
-    document.querySelector('#clock').innerText = `${this.dayText} ${this.dd}.${this.mm}.${this.yy} ${this.hh}:${this.min}:${this.sec}`;
+    return `${this.dayText} ${this.dd}.${mm}.${yy} ${hh}:${min}:${sec}`;
   }
 
   render() {
+    const date = new Date();
+    const currentDayNumber = date.getDay();
+
+    const nextDay = (day, offset) => {
+      let dayNumber = day + offset;
+      if (dayNumber >= DAYS.length) {
+        dayNumber = offset - 1;
+      }
+
+      return dayNumber;
+    };
+
+    const day2Name = DAYS[nextDay(currentDayNumber, 1)];
+    const day3Name = DAYS[nextDay(currentDayNumber, 2)];
+    const day4Name = DAYS[nextDay(currentDayNumber, 3)];
+
+    console.log(nextDay(2));
+
     return `
       <section class=${styles.weather}>
         <h3 class=${styles.weatherTitle}>${this.model.city}, ${this.model.country}</h3>
-        <time class=${styles.weatherDate} datetime=${this.date} id='clock'></time>
+        <time class=${styles.weatherDate} datetime=${this.date} id='clock'>${this.timer}</time>
         <ol class=${styles.weatherWeek}>
-          <li class=${styles.weatherTodayTemperature}>${this.model.temperature || '--'}&#176;
+          <li class=${styles.weatherTodayTemperature} data-temperature>
+          ${this.model.temperature || '--'}
             <div class='${icons.icon} ${icons.iconToday}' style='background-image: url(./assets/weatherIcons/${this.model.iconCodeToday}.svg)'></div>
           </li>
           <li class=${styles.weatherToday}>
@@ -70,14 +89,29 @@ class WeatherView {
               <li>влажность: ${this.model.humidity || '--'}%</li>
             </ul>
           </li>
-          <li class=${styles.weatherWeekSecond}>${this.model.temperatureSecond || '--'}&#176;
-            <div class='${icons.icon} ${icons.iconSmall}' style='background-image: url(./assets/weatherIcons/${this.model.iconCodeSecondDay}.svg)'></div>
+          <li class=${styles.weatherWeekSecond} data-temperature>
+          ${this.model.temperatureSecond || '--'}
+            <div class='${icons.icon} ${icons.iconSmall}' style='background-image: url(./assets/weatherIcons/${this.model.iconCodeSecondDay}.svg)'>
+            
+              <span class=${styles.nextDay}>${day2Name}</span>
+            
+            </div>
           </li>
-          <li class=${styles.weatherWeekThird}>${this.model.temperatureThird || '--'}&#176;
-            <div class='${icons.icon} ${icons.iconSmall}' style='background-image: url(./assets/weatherIcons/${this.model.iconCodeThirdDay}.svg)'></div>
+          <li class=${styles.weatherWeekThird} data-temperature>
+          ${this.model.temperatureThird || '--'}
+            <div class='${icons.icon} ${icons.iconSmall}' style='background-image: url(./assets/weatherIcons/${this.model.iconCodeThirdDay}.svg)'>
+            
+              <span class=${styles.nextDay}>${day3Name}</span>
+
+            </div>
           </li>
-          <li class=${styles.weatherWeekFourd}>${this.model.temperatureFourd || '--'}&#176;
-            <div class='${icons.icon} ${icons.iconSmall}' style='background-image: url(./assets/weatherIcons/${this.model.iconCodeFourdDay}.svg)'></div>
+          <li class=${styles.weatherWeekFourd} data-temperature>
+          ${this.model.temperatureFourd || '--'}
+            <div class='${icons.icon} ${icons.iconSmall}' style='background-image: url(./assets/weatherIcons/${this.model.iconCodeFourdDay}.svg)'>
+
+              <span class=${styles.nextDay}>${day4Name}</span>
+            
+            </div>
           </li>
         </ol>
       </section>`;
