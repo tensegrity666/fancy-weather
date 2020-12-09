@@ -2,8 +2,6 @@
 
 https://tensegrity666-fancy-weather.netlify.app/
 
-[Link to working repository](https://github.com/rolling-scopes-school/tensegrity666-RS2020Q1/tree/fancy-weather/fancy-weather)
-
 [Screenshot](https://yadi.sk/d/OXWXREU2-Yqpwg)
 
 Deadline: 31.05.2020 23:59
